@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div id="hearts"></div>
+
+    <!-- Floating Balloons -->
+    <div id="balloons"></div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Controls -->
+    <div id="musicControls">
+
+        <button id="musicBtn">🔊 Music On</button>
+
+        <label for="volumeControl">Volume:</label>
+
+        <input
+            type="range"
+            id="volumeControl"
+            min="0"
+            max="1"
+            step="0.1"
+            value="0.5"
+        >
+
+    </div>
+
+    <!-- Animated Background -->
+    <div class="background"></div>
+
+    <!-- Welcome Screen -->
+    <div id="welcome">
+
+        <h3>🎉 Welcome 🎉</h3>
+
+        <h1>Happy Birthday ❤️</h1>
+
+        <p>Today is your special day.</p>
+
+        <button id="startBtn">
+            Start Surprise 🎁
+        </button>
+
+    </div>
+
+    <!-- Countdown -->
+    <div id="countdown">
+
+        <h1 id="number">3</h1>
+
+    </div>
+
+    <!-- Memory Slider -->
+    <div id="gallery">
+
+        <h2>📸 Beautiful Memories</h2>
+
+        <div class="slider-box">
+
+            <button id="prevBtn">❮</button>
+
+            <img
+                id="sliderImage"
+                src="assets/images/pic1.jpg"
+                alt="Memory"
+            >
+
+            <button id="nextBtn">❯</button>
+
+        </div>
+
+        <h3 id="caption">
+            ❤️ Our First Memory ❤️
+        </h3>
+
+        <p id="memoryDate">
+            📅 5 March 2023
+        </p>
+
+        <p id="memoryText">
+            📍 Every beautiful story starts with one unforgettable moment.
+        </p>
+
+        <div id="counter">
+            1 / 7
+        </div>
+
+        <button id="pauseBtn">
+            ⏸ Pause
+        </button>
+
+    </div>
+
+    <!-- Confetti -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

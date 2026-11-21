@@ -1,0 +1,490 @@
+
+/* =========================
+   General Styles
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #ff758c, #ff7eb3, #a18cd1, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: white;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================
+   Animated Background
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: -1;
+}
+
+/* =========================
+   Welcome Screen
+========================= */
+
+#welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    padding: 35px 20px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+#welcome h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#welcome h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+#welcome p {
+    margin-bottom: 25px;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 22px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff4081, #ff80ab);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 18px rgba(255, 64, 129, 0.4);
+}
+
+/* =========================
+   Countdown
+========================= */
+
+#countdown {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#number {
+    font-size: 100px;
+    animation: countAnimation 1s ease infinite;
+}
+
+@keyframes countAnimation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* =========================
+   Floating Hearts
+========================= */
+
+#hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    font-size: 25px;
+    animation: floatHeart 6s linear forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   Floating Balloons
+========================= */
+
+#balloons {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    font-size: 40px;
+    animation: floatBalloon 9s linear forwards;
+}
+
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   Gallery
+========================= */
+
+#gallery {
+    display: none;
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+#gallery h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   Slider
+========================= */
+
+.slider-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+#sliderImage {
+    width: 700px;
+    max-width: 75%;
+    height: 450px;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Previous and Next Buttons */
+
+#prevBtn,
+#nextBtn {
+    min-width: 45px;
+    height: 45px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+/* =========================
+   Memory Text
+========================= */
+
+#caption {
+    font-size: 24px;
+    margin-top: 25px;
+}
+
+#memoryDate {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#memoryText {
+    font-size: 15px;
+    margin-top: 8px;
+    line-height: 1.6;
+}
+
+#counter {
+    margin: 15px 0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* =========================
+   Pause Button
+========================= */
+
+#pauseBtn {
+    margin-top: 10px;
+}
+
+/* =========================
+   Slider Animation
+========================= */
+
+.slide-animation {
+    animation: slideFade 0.8s ease;
+}
+
+.text-animation {
+    animation: textFade 0.7s ease;
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateX(35px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes textFade {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   Confetti
+========================= */
+
+#confettiCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* =========================
+   Music Controls
+========================= */
+
+#musicControls {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 12px;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(8px);
+}
+
+#musicBtn {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+#volumeControl {
+    width: 85px;
+    cursor: pointer;
+    accent-color: #ff4081;
+}
+
+/* =========================
+   Final Birthday Message
+========================= */
+
+#finalMessage {
+    display: none;
+    width: 90%;
+    max-width: 650px;
+    margin: 100px auto;
+    padding: 35px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    animation: textFade 1s ease;
+}
+
+#finalMessage h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+#finalMessage p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 768px) {
+
+    #welcome h1 {
+        font-size: 30px;
+    }
+
+    #gallery {
+        margin: 80px auto 30px;
+        padding: 20px 12px;
+    }
+
+    #gallery h2 {
+        font-size: 23px;
+    }
+
+    #sliderImage {
+        width: 100%;
+        max-width: 75%;
+        height: 320px;
+    }
+
+    .slider-box {
+        gap: 7px;
+    }
+
+    #prevBtn,
+    #nextBtn {
+        min-width: 35px;
+        height: 35px;
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    #caption {
+        font-size: 19px;
+    }
+
+    #memoryText {
+        font-size: 13px;
+    }
+
+    #finalMessage h1 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #welcome {
+        padding: 25px 15px;
+    }
+
+    #welcome h1 {
+        font-size: 26px;
+    }
+
+    #welcome h3 {
+        font-size: 19px;
+    }
+
+    #sliderImage {
+        height: 250px;
+    }
+
+    #musicControls {
+        top: 8px;
+        right: 8px;
+        padding: 8px;
+        gap: 6px;
+    }
+
+    #musicBtn {
+        font-size: 11px;
+        padding: 7px 9px;
+    }
+
+    #musicControls label {
+        font-size: 11px;
+    }
+
+    #volumeControl {
+        width: 65px;
+    }
+
+    #number {
+        font-size: 75px;
+    }
+}
